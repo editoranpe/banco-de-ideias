@@ -28,7 +28,12 @@
     "@cloudflare/workers-types": "4.20260515.1",
     "wrangler": "4.92.0"
   },
-  "engines": {
+   "engines": {
     "node": ">=22.13.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "miniflare>sharp": "0.35.4"
+    }
   }
 }
