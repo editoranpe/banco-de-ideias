@@ -5,3 +5,44 @@
 @media(max-width:950px){.sidebar{width:195px;padding-inline:10px}.brand{font-size:14px;gap:7px}.brand-mark{width:31px;height:36px}.brand small{font-size:5.8px}.workspace-label{font-size:8px}.sidebar nav button{font-size:11px;gap:8px}main{margin-left:195px;width:calc(100% - 195px)}.main-content{padding:28px 22px}.topbar{padding:0 22px}.topbar>div>span{display:none}.page-heading{align-items:flex-start}.page-heading h1{font-size:25px}.hero h2{font-size:25px}.hero-copy{z-index:3}.idea-visual{width:165px}.bulb-tile{width:100px;height:120px}.bulb-tile>svg{width:55px}.orbit{width:170px;height:150px}.orbit-two{width:200px;height:180px}.floating-note{font-size:8px;padding:8px}.note-top{right:-10px;top:0}.note-bottom{left:-20px;bottom:7px}.ideas-toolbar{align-items:flex-start;flex-direction:column}.filters{width:100%}.search{flex:1}.search input{width:100%}.example-banner .text-button{white-space:normal}.example-banner p{line-height:1.7}.detail-grid,.document-grid{grid-template-columns:1fr}.detail-aside{display:none}.export-panel{position:static}.priority-panel{max-width:none}.settings-grid{grid-template-columns:1fr}.tabs{gap:15px}.tabs button{font-size:11px}.auth-banner{flex-wrap:wrap}.topbar{height:65px}}
 @media(max-width:680px){.app-shell{display:block}.sidebar{position:static;width:100%;padding:15px 18px 10px}.brand{font-size:18px}.brand small{font-size:7px}.brand-mark{width:35px;height:40px}.workspace-label,.sidebar-note,.profile,.nav-divider{display:none}.sidebar nav{display:flex;gap:5px;overflow-x:auto;margin-top:15px}.sidebar nav button{white-space:nowrap;width:auto;padding:9px 11px;font-size:10px;gap:6px}.sidebar nav button svg{width:15px}.sidebar nav button span{display:none}.sidebar nav[aria-label="Administração"]{margin-top:3px}.sidebar nav[aria-label="Administração"] button{font-size:9px;padding:8px 11px}main{margin:0;width:100%}.topbar{height:45px;padding:0 20px;font-size:9px}.main-content{padding:27px 18px}.page-heading{flex-wrap:wrap;gap:16px;margin-bottom:22px}.page-heading h1{font-size:27px}.eyebrow{font-size:8px}.page-heading .muted{font-size:11px}.hero{padding:26px 22px;min-height:250px}.hero h2{font-size:26px}.hero p{font-size:11px;max-width:240px}.hero-label{font-size:6.8px}.idea-visual{display:none}.stats{margin:20px 0 27px;padding:13px 0 22px;gap:10px}.stats>div{gap:8px}.stat-icon{width:31px;height:34px;border-radius:8px}.stat-icon svg{width:17px}.stats strong{font-size:20px}.stats div div>span{font-size:8px}.section-title h2{font-size:17px}.filters{gap:7px}.filter{padding:9px 8px}.filter select{font-size:9px}.search input{font-size:10px}.ideas-grid{grid-template-columns:1fr}.idea-card,.new-card{min-height:210px}.example-banner{flex-wrap:wrap;padding:18px;gap:12px}.example-banner>div{flex:1}.example-banner strong{font-size:11px}.example-banner .text-button{margin-left:50px}.bottom-note{font-size:8px}.bottom-note button{font-size:8px}.detail-heading{flex-wrap:wrap}.detail-heading h1{font-size:25px}.inline-meta{flex-wrap:wrap;gap:8px}.tabs{overflow-x:auto;gap:15px}.tabs button{white-space:nowrap;font-size:10px}.tabs button>span{display:none}.form-panel{padding:22px 18px}.field{font-size:12px}.form-actions{align-items:stretch;gap:10px}.form-actions>div{flex-wrap:wrap;justify-content:flex-end}.button{font-size:11px;padding:10px 12px}.two-cols{grid-template-columns:1fr;gap:0}.document-toolbar{padding:15px}.document-toolbar strong{font-size:10px}.version-line{padding:12px 15px}.markdown{padding:22px}.markdown h1{font-size:21px}.modal{padding:24px 20px}.modal h2{font-size:23px}.modal-backdrop{padding:12px}.small-text{display:none}.modal .form-actions{justify-content:flex-end}.member{gap:10px;flex-wrap:wrap}.member>div{flex-basis:65%}.toast{bottom:16px;right:16px;font-size:11px}.info-box{font-size:11px;padding:15px}.auth-banner>.button{width:100%}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* Corrige a janela Nova ideia */
+.app-shell > .modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.app-shell > .modal-backdrop > .modal {
+  position: relative;
+  inset: auto;
+  display: block;
+  flex: 0 1 600px;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  max-height: calc(100dvh - 32px);
+  margin: 0;
+  padding: 24px;
+  transform: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-backdrop > .modal > form {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.modal-backdrop .form-actions {
+  flex-wrap: wrap;
+}
+
+body:has(.modal-backdrop) {
+  overflow: hidden;
+}
